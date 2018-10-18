@@ -1,7 +1,12 @@
 from django.http import JsonResponse
 from django.views import View
 
+from currencies.models import ExchangeRate
 
-class CurrenciesView(View):
+
+class ExchangeRatesView(View):
     def get(self, request):
-        return JsonResponse({"message": "Hello world!"})
+        exchanges_rates = ExchangeRate.objects.all()
+        return JsonResponse({
+            "exchange_rates": list(exchanges_rates)
+        })

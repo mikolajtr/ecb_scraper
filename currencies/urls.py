@@ -1,7 +1,7 @@
 from django.urls import path
 
-from currencies.views import CurrenciesView
+from currencies.views import ExchangeRatesView
 
 urlpatterns = [
-    path('', CurrenciesView.as_view()),
+    path('', ExchangeRatesView.as_view()),
 ]

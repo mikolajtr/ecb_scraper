@@ -18,7 +18,7 @@ def get_feeds_urls(ecb_url, base_url):
         }
 
 
-def get_currency_changes(url):
+def get_exchange_rates(url):
     feed = feedparser.parse(url)
     entries = feed.entries
 
