@@ -1,2 +1,5 @@
 Django==2.1.2
 pytz==2018.5
+feedparser==5.2.1
+beautifulsoup4==4.6.3
+requests==2.20.0
