@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+
+class ExchangeRate(models.Model):
+    currency = models.CharField(max_length=3)
+    value = models.DecimalField(decimal_places=4, max_digits=6)
+    updated = models.DateTimeField()
+
