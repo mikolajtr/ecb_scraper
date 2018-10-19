@@ -19,6 +19,6 @@ class Command(BaseCommand):
                 exchange_rate = ExchangeRate(currency=rate['currency'],
                                              value=rate['value'],
                                              updated=datetime.fromtimestamp(mktime(rate['updated'])))
-                print('save')
+                print(f'1 EUR = {rate["value"]} {rate["currency"]}')
                 exchange_rate.save()
                 break

@@ -12,10 +12,16 @@ class ExchangeRatesView(View):
 
         exchanges_rates = ExchangeRate.objects.all().order_by('-updated')
         paginator = Paginator(exchanges_rates, page_size)
+        max_page = len(paginator.page_range)
+
+        if page > max_page:
+            page = max_page
 
         return JsonResponse({
             "page": page,
             "page_size": page_size,
             "total": paginator.count,
-            "data": list(paginator.page(page))
+            "data": [{"currency": rate.currency,
+                      "value": rate.value,
+                      "updated": rate.updated} for rate in paginator.page(page)]
         })
