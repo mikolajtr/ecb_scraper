@@ -9,8 +9,9 @@ class ExchangeRatesView(View):
     def get(self, request):
         page = int(request.GET.get('page', 1))
         page_size = int(request.GET.get('page_size', 20))
+        order_by = request.GET.get('order_by', '-updated')
 
-        exchanges_rates = ExchangeRate.objects.all().order_by('-updated')
+        exchanges_rates = ExchangeRate.objects.all().order_by(order_by)
         paginator = Paginator(exchanges_rates, page_size)
         max_page = len(paginator.page_range)
 
