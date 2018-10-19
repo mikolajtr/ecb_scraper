@@ -11,11 +11,7 @@ def get_feeds_urls(ecb_url, base_url):
     html = BeautifulSoup(page.text, features="html.parser")
     for a in html.find_all('a', href=re.compile("/rss/fxref")):
         url = base_url + a['href']
-        currency = a['href'][11:14].upper()
-        yield {
-            "url": url,
-            "currency": currency
-        }
+        yield url
 
 
 def get_exchange_rates(url):
