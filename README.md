@@ -13,7 +13,7 @@ Endpoint response:
 * `page`
 * `page_size`
 * `total` - total number of saved rates
-* `data` - rate object
+* `data` - list of rate objects
 
 Each exchange rate objects has 3 fields (and `id`, not displayed):
 * `currency`
