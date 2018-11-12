@@ -1,5 +1,5 @@
 # ecb_scraper
-Simple API that scraps exchange rates from RSS feeds
+Simple API that scraps exchange rates from European Central Bank RSS feed.
 
 Requires Python 3.6 or higher
 
